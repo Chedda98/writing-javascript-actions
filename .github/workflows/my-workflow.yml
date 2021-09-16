@@ -1,6 +1,24 @@
-- name: OpenAPI Lint Checks
-- uses: nwestfall/openapi-action@v1.0.1
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    file: FILE_PATH
+name: JS Actions
 
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: hello-action
+        uses: ./.github/actions/hello-world
+
+      - name: ha-ha
+        uses: ./.github/actions/joke-action
+      
+      - name: OpenAPI Lint Checks
+        uses: nwestfall/openapi-action@v1.0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          file: FILE_PATH
