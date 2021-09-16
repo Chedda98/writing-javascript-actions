@@ -1,0 +1,5 @@
+name: googlesheet-actions
+
+description: "google sheet with actions"
+
+uses: rjoydip/googlesheet-actions@0.1.1
