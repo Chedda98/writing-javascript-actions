@@ -1,4 +1,4 @@
-name: googlesheet test
+name: googlesheet
 
 on:
     push:
