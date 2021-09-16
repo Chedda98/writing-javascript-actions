@@ -1,4 +1,4 @@
-name: JS Actions and googlesheet
+name: googlesheet
 
 on:
     push:
