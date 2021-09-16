@@ -19,6 +19,6 @@ jobs:
       
       - name: OpenAPI Lint Checks
         uses: nwestfall/openapi-action@v1.0.1
-         with:
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           file: FILE_PATH
