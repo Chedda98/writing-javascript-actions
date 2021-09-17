@@ -1,5 +1,5 @@
 # bare minimal
-name: agit webhook bot
+name: agit webhook bot test
 
 on:
   push:
