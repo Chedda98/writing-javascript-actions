@@ -14,5 +14,5 @@ jobs:
           uses: joelwmale/webhook-action@master
           with:
             url: ${{ secrets.WEBHOOK_URL }}
-            headers: '{"repository": "joelwmale/webhook-action"}'
-            body: '{"event": "deployment", "repository": "joelwmale/webhook-action"}'
+            headers: '{"repository": "Chedda98/writing-javascript-actions"}'
+            body: '{"event": "deployment", "repository": "Chedda98/writing-javascript-actions"}'
