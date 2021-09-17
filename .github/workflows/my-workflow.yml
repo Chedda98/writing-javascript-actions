@@ -1,5 +1,5 @@
 # bare minimal
-name: googlesheet
+name: agit webhook bot
 
 on:
   push:
@@ -10,16 +10,9 @@ jobs:
     fetch:
       runs-on: ubuntu-latest
       steps:
-        - id: googlesheet_actions
-          uses: rjoydip/googlesheet-actions@0.1.1
+        - name: Webhook
+          uses: joelwmale/webhook-action@master
           with:
-            sheet-id: ${{secrets.SHEET_ID}}
-        - id: echo
-          uses: actions/github-script@v2
-          with:
-            github-token: ${{secrets.GITHUB_TOKEN}}
-            script: |
-                console.log(${{steps.googlesheet_actions.outputs.result}})
-        - name: test
-          run: |
-            cat $HOME/data.json
+            url: ${{ secrets.WEBHOOK_URL }}
+            headers: '{"repository": "joelwmale/webhook-action"}'
+            body: '{"event": "deployment", "repository": "joelwmale/webhook-action"}'
